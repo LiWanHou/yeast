@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 import pickle
 
 # Create flask app
-flask_app = Flask(__name__)
+flask_app = Flask(__name__, template_folder='Yeast')
 model_knn = pickle.load(open("model_knn.pkl", "rb"))
 model_dt = pickle.load(open("model_dt.pkl", "rb"))
 model_rfc = pickle.load(open("model_rfc.pkl", "rb"))

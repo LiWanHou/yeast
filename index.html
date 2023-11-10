@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta http-equiv="refresh" content="0; url=https://liwanhou.github.io/templates/index.html">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    
+    <div class="login">
+        <h1>Yeast Class Prediction</h1>
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="mcg" placeholder="mcg" required="required" />
+            <input type="text" name="gvh" placeholder="gvh" required="required" />
+            <input type="text" name="alm" placeholder="alm" required="required" />
+            <input type="text" name="mit" placeholder="mit" required="required" />
+            <input type="text" name="erl" placeholder="erl" required="required" />
+            <input type="text" name="pox" placeholder="pox" required="required" />
+            <input type="text" name="vac" placeholder="vac" required="required" />
+            <input type="text" name="nuc" placeholder="nuc" required="required" />
+            <button type="submit">Predict</button>
+        </form>
+        <br>
+        <br>
+        {{ prediction_text_knn }}
+        <br>
+        {{ prediction_text_dt }}
+        <br>
+        {{ prediction_text_rfc }}
+    </div>
 </body>
 </html>
