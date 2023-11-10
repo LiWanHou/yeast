@@ -26,7 +26,7 @@ X_sm, y_sm = sm.fit_resample(X, y)
 X_sm.shape, y_sm.shape
 
 # Chia train, test set
-X_train,X_test,y_train,y_test=train_test_split(X_sm,y_sm,test_size=0.2,random_state=32)
+X_train,X_test,y_train,y_test=train_test_split(X_sm,y_sm,test_size=1/3,random_state=32)
 
 #KNN
 n_knn = round(math.sqrt(len(X_train)))
